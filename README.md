@@ -8,9 +8,9 @@
 
 https://github.com/user-attachments/assets/48414fa1-4f0d-4efa-a5c0-02f5375274eb
 
-Full Demo Video (4m 35s)
+### Full Walkthrough
 
-https://www.youtube.com/watch?v=Z--yd8zK_Hk
+[Watch on YouTube](https://www.youtube.com/watch?v=Z--yd8zK_Hk)
 
 ## What is this?
 
