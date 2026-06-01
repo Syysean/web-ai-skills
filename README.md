@@ -6,7 +6,7 @@
 
 ---
 
-https://github.com/Syysean/web-ai-skills/blob/main/assets/demo.mp4
+https://github.com/user-attachments/assets/48414fa1-4f0d-4efa-a5c0-02f5375274eb
 
 ## What is this?
 
