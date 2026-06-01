@@ -3,6 +3,11 @@ name: grok-worker
 description: "Use this skill to send a prompt to Grok and get a response. Triggers when the user wants to query Grok, use Grok as an AI worker, or when the web-ai-router directs a task to Grok. Best for tasks requiring real-time web search, current events, or news. Requires login — session is persisted in Chrome profile."
 ---
 
+## Shell Escaping Note
+When passing JavaScript to browser-eval.js, always use double quotes
+for the outer shell argument and single quotes inside the JavaScript.
+Example: browser-eval.js "document.querySelector('.class')?.innerText"
+
 # Grok Worker
 
 Send a prompt to Grok via browser and return the response.
@@ -140,13 +145,13 @@ Spinner selectors are unreliable. Use response length stability as the primary c
 
 Response extraction for polling:
 
-```javascript
+​```javascript
 (function() {
-  const msgs = document.querySelectorAll('[class*="message"], [class*="response"], [data-testid*="message"]');
-  if (msgs.length > 0) return msgs[msgs.length - 1].innerText?.trim()?.length || 0;
+  const els = document.querySelectorAll('.response-content-markdown');
+  if (els.length > 0) return els[els.length - 1].innerText?.trim()?.length || 0;
   return 0;
 })()
-```
+​```
 
 If 120 seconds pass with no stable response: trigger retry.
 
@@ -154,18 +159,13 @@ If 120 seconds pass with no stable response: trigger retry.
 
 ### Step 7 — Extract response
 
-```javascript
+​```javascript
 (function() {
-  // Try known response containers
-  const candidates = document.querySelectorAll(
-    '[class*="message"], [class*="response"], [data-testid*="message"]'
-  );
-  if (candidates.length > 0) {
-    return candidates[candidates.length - 1].innerText?.trim();
-  }
+  const els = document.querySelectorAll('.response-content-markdown');
+  if (els.length > 0) return els[els.length - 1].innerText?.trim();
   return "EXTRACTION_FAILED";
 })()
-```
+​```
 
 Validate the result:
 - Must contain text

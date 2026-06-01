@@ -6,6 +6,8 @@
 
 ---
 
+<video src="assets/demo.mp4" controls width="100%"></video>
+
 ## What is this?
 
 A collection of [pi agent](https://github.com/skylar-anderson/pi) skills that let your AI agent delegate tasks to external web-based AI systems — Gemini, Grok, DeepSeek, Claude, and ChatGPT — by controlling a real browser session.
