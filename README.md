@@ -6,7 +6,7 @@
 
 ---
 
-<video src="assets/demo.mp4" controls width="100%"></video>
+<video src="assets/demo.mp4" autoplay loop muted></video>
 
 ## What is this?
 
