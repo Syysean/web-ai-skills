@@ -6,7 +6,7 @@
 
 ---
 
-<video src="assets/demo.mp4" autoplay loop muted></video>
+https://github.com/Syysean/web-ai-skills/blob/main/assets/demo.mp4
 
 ## What is this?
 
